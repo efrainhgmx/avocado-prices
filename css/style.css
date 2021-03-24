@@ -6,7 +6,28 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+img {
+    width: 100%;
+}
+
 .wrapper {
     max-inline-size: 1350px;
     margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 15px;
+}
+
+.header-image {
+    inline-size: 100px;
+    margin: 0;
+}
+
+
+.header-content p {
+    font-size: 1.8rem;
 }
