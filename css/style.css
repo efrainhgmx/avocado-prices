@@ -1,0 +1,9 @@
+html {
+    font-size: 62.5%;
+}
+
+.wrapper {
+    max-inline-size: 1350px;
+    margin: 0 auto;
+    background-color: blue;
+}
