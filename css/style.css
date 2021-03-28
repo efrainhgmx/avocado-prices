@@ -24,6 +24,7 @@ h3 {
 
 p {
     font-size: 1.6rem;
+    line-height: 1.8rem;
 }
 
 .wrapper {
@@ -69,7 +70,6 @@ p {
 
 .card {
     padding-inline: 25px;
-    max-inline-size: 180px;
     text-align: center;
     border-radius: 15px;
     box-shadow: -3px 4px 3px 6px rgba(0, 0, 0, 0.2);
@@ -102,6 +102,7 @@ p {
 
     .card {
         block-size: 350px;
+        justify-self: center;
     }
 
 }
@@ -109,5 +110,13 @@ p {
 @media (min-width: 1024px) {
     #avocadoGallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        max-inline-size: 350px;
+    }
+
+    .card p {
+        font-size: 1rem;
     }
 }

@@ -2,6 +2,13 @@ const urlAPI = "https://platzi-avo.vercel.app/api/avo";
 const avocadoGallery = document.getElementById('avocadoGallery');
 const galleryTitle = document.createElement('h2');
 
+function currencyFormat(price) {
+    const newPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+        .format(price);
+        
+    return newPrice;
+}
+
 function showData(apiData) {
     const avocados = [];
 
@@ -21,13 +28,13 @@ function showData(apiData) {
         description.textContent = element.attributes.description;
 
         const price = document.createElement('span');
-        price.textContent = element.price;
+        price.textContent = currencyFormat(element.price);
 
         const serialNumber = document.createElement('p');
         serialNumber.textContent = element.sku;
 
         imageContainer.appendChild(image);
-        card.append(imageContainer, title, description, price, serialNumber);
+        card.append(title, imageContainer, description, price, serialNumber);
         avocados.push(card);
     });
     galleryTitle.textContent = 'The favorites this month.';
