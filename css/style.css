@@ -14,6 +14,14 @@ h1 {
     font-size: 2.8rem;
 }
 
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
 p {
     font-size: 1.6rem;
 }
@@ -53,5 +61,53 @@ p {
 
 #avocadoGallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto;
+    gap: 25px;
+}
+
+.card {
+    padding-inline: 25px;
+    max-inline-size: 180px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: -3px 4px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: -4px 4px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.card figure {
+    margin: auto;
+    inline-size: 75px;
+}
+
+.card p {
+    font-size: .8rem;
+}
+
+.card span,
+.serialNumber {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+    #avocadoGallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        block-size: 350px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    #avocadoGallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

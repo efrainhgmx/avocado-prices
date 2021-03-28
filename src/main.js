@@ -7,6 +7,7 @@ function showData(apiData) {
 
     apiData.data.forEach(element => {
         const card = document.createElement('div');
+        card.className = "card";
         const imageContainer = document.createElement('figure');
 
         const image = document.createElement('img');
@@ -30,7 +31,7 @@ function showData(apiData) {
         avocados.push(card);
     });
     galleryTitle.textContent = 'The favorites this month.';
-    avocadoGallery.appendChild(galleryTitle);
+    document.querySelector('.main-content').appendChild(galleryTitle);
     avocadoGallery.append(...avocados);
 }
 
