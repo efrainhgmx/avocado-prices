@@ -5,7 +5,7 @@ const galleryTitle = document.createElement('h2');
 function currencyFormat(price) {
     const newPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
         .format(price);
-        
+
     return newPrice;
 }
 
@@ -31,7 +31,8 @@ function showData(apiData) {
         price.textContent = currencyFormat(element.price);
 
         const serialNumber = document.createElement('p');
-        serialNumber.textContent = element.sku;
+        serialNumber.textContent = `CODE: ${element.sku}`;
+        serialNumber.className = "serialNumber";
 
         imageContainer.appendChild(image);
         card.append(title, imageContainer, description, price, serialNumber);
