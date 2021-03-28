@@ -48,3 +48,10 @@ p {
 .footer-content {
     font-size: 1.2rem;
 }
+
+/* Gallery Section */
+
+#avocadoGallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

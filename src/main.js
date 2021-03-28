@@ -1,5 +1,6 @@
 const urlAPI = "https://platzi-avo.vercel.app/api/avo";
 const avocadoGallery = document.getElementById('avocadoGallery');
+const galleryTitle = document.createElement('h2');
 
 function showData(apiData) {
     const avocados = [];
@@ -10,6 +11,7 @@ function showData(apiData) {
 
         const image = document.createElement('img');
         image.src = `https://platzi-avo.vercel.app${element.image}`;
+        image.title = element.name;
 
         const title = document.createElement('h3');
         title.textContent = element.name;
@@ -27,6 +29,8 @@ function showData(apiData) {
         card.append(imageContainer, title, description, price, serialNumber);
         avocados.push(card);
     });
+    galleryTitle.textContent = 'The favorites this month.';
+    avocadoGallery.appendChild(galleryTitle);
     avocadoGallery.append(...avocados);
 }
 
