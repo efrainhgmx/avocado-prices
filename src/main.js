@@ -9,6 +9,14 @@ function currencyFormat(price) {
     return newPrice + " USD";
 }
 
+function preload() {
+    const mainContent = document.querySelector('.main-content');
+    const loader = document.createElement('div');
+    loader.className = "preloader";
+
+    mainContent.appendChild(loader);
+}
+
 function showData(apiData) {
     const avocados = [];
 
@@ -39,12 +47,14 @@ function showData(apiData) {
         card.append(title, imageContainer, description, price, serialNumber);
         avocados.push(card);
     });
+    document.querySelector('.preloader').remove();
     galleryTitle.textContent = 'The favorites this month.';
-    document.querySelector('.main-content').appendChild(galleryTitle);
     avocadoGallery.append(...avocados);
+    avocadoGallery.insertAdjacentElement("beforebegin", galleryTitle);
 }
 
 function errorData(error) {
+    document.querySelector('.preloader').remove();
     const errorImageContainer = document.createElement('figure');
     const errorImage = document.createElement('img');
     errorImage.src = "./assets/dancingAvocado.webp";
@@ -61,6 +71,8 @@ function errorData(error) {
 
     console.error(error);
 }
+
+preload();
 
 fetch(urlAPI)
     .then(response => response.json())
