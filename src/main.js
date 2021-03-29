@@ -20,6 +20,7 @@ function showData(apiData) {
         const image = document.createElement('img');
         image.src = `https://platzi-avo.vercel.app${element.image}`;
         image.title = element.name;
+        image.alt = element.name;
 
         const title = document.createElement('h3');
         title.textContent = element.name;
@@ -43,7 +44,25 @@ function showData(apiData) {
     avocadoGallery.append(...avocados);
 }
 
+function errorData(error) {
+    const errorImageContainer = document.createElement('figure');
+    const errorImage = document.createElement('img');
+    errorImage.src = "./assets/dancingAvocado.webp";
+    errorImage.title = "Something went wrong, Please refresh the website or try it later.";
+    errorImage.alt = "Something went wrong, Please refresh the website or try it later.";
+
+    errorImageContainer.style.inlineSize = "50%";
+    errorImageContainer.appendChild(errorImage);
+    avocadoGallery.style.display = "block";
+    avocadoGallery.style.textAlign = "center";
+
+    galleryTitle.textContent = "Something went wrong, Please refresh the website or try it later.";
+    avocadoGallery.append(galleryTitle,errorImageContainer);
+
+    console.error(error);
+}
+
 fetch(urlAPI)
     .then(response => response.json())
     .then(datos => showData(datos))
-    .catch(error => console.error(error + " Data API"));
+    .catch(error => errorData(error));

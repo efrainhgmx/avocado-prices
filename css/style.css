@@ -6,6 +6,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+figure {
+    margin: auto;
+}
+
 img {
     width: 100%;
 }
@@ -82,8 +86,7 @@ p {
 }
 
 .card figure {
-    margin: auto;
-    inline-size: 75px;
+    inline-size: 90px;
 }
 
 .card p {
@@ -96,6 +99,10 @@ p {
     font-size: 1.4rem;
 }
 
+.footer-content a {
+    color: #1b6b1e;
+}
+
 @media (min-width: 768px) {
     #avocadoGallery {
         grid-template-columns: repeat(2, 1fr);
@@ -104,6 +111,10 @@ p {
     .card {
         block-size: 350px;
         justify-self: center;
+    }
+
+    .card p {
+        font-size: 1rem;
     }
 
 }
