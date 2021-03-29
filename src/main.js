@@ -6,7 +6,7 @@ function currencyFormat(price) {
     const newPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
         .format(price);
 
-    return newPrice;
+    return newPrice + " USD";
 }
 
 function showData(apiData) {
